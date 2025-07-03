@@ -9,7 +9,7 @@ API_URL = os.getenv("API_URL") or "http://localhost:8000/chat"
 
 st.set_page_config(page_title="Coffee Chatbot", page_icon=":coffee:")
 
-st.title("Coffee Chatbot ☕")
+st.title("Barista Chatbot ☕")
 
 # Initialize chat history in session state
 if "messages" not in st.session_state:
@@ -31,8 +31,6 @@ if st.button("Send") and user_input:
     except Exception as e:
         bot_reply = f"Error: {e}"
     st.session_state.messages.append({"role": "bot", "content": bot_reply})
-    # Clear the input by rerunning the app
-    st.rerun()
 
 # Display chat history in message containers
 for msg in st.session_state.messages:

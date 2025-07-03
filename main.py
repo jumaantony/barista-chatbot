@@ -3,7 +3,6 @@ from fastapi.responses import JSONResponse
 from agent.agent import chat
 from models.models import ChatRequest, ChatResponse
 
-# Create FastAPI app with metadata
 app = FastAPI(
     title="Coffee Bot API",
     description="A simple API for coffee bot functionality with comprehensive documentation",

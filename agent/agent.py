@@ -1,6 +1,5 @@
 from google import genai
 from google.genai import types
-# from google.api_core import retry
 from service.barista import BaristaService
 from dotenv import load_dotenv
 import os
@@ -8,14 +7,12 @@ import os
 load_dotenv()
 client = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
 
-# Read the coffee bot prompt from file
 def load_prompt():
     with open("agent/prompt.txt", "r", encoding="utf-8") as file:
         return file.read()
 
 COFFEE_BOT_PROMPT = load_prompt()
 
-# Create barista service instance
 barista_service = BaristaService()
 
 ordering_system = [
